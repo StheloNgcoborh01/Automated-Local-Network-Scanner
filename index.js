@@ -1,6 +1,4 @@
-// -------------------------
-// IMPORT MODULES
-// -------------------------
+
 
 import { createRequire } from "module";
 const require = createRequire(import.meta.url);
@@ -19,17 +17,12 @@ const execAsync = promisify(exec);
 const app = express();
 const PORT = 3000;
 
-// -------------------------
-// MIDDLEWARE
-// -------------------------
 
 app.use(bodyParser.json());
 app.use(express.static(path.join(process.cwd(), "public")));
 app.set("view engine", "ejs");
 
-// -------------------------
-// HELPER: Get Vendor from MAC
-// -------------------------
+
 async function getMacVendor(mac) {
     try {
         const macPrefix = mac.replace(/:/g, '').substring(0, 6).toUpperCase();
@@ -70,9 +63,7 @@ async function getMacVendor(mac) {
     }
 }
 
-// -------------------------
-// HELPER: Get Local Network Info
-// -------------------------
+
 function getLocalNetworkInfo() {
     const interfaces = os.networkInterfaces();
     
@@ -95,9 +86,6 @@ function getLocalNetworkInfo() {
     return null;
 }
 
-// -------------------------
-// HELPER: Scan Network using nmap (Cross-platform)
-// -------------------------
 async function scanNetwork() {
     const networkInfo = getLocalNetworkInfo();
     if (!networkInfo) {
@@ -175,9 +163,7 @@ async function scanNetwork() {
     }
 }
 
-// -------------------------
-// HELPER: Ping Scan (Fallback method)
-// -------------------------
+
 async function pingScanNetwork(networkInfo) {
     const devices = [];
     
@@ -251,9 +237,7 @@ async function pingScanNetwork(networkInfo) {
     return devices;
 }
 
-// -------------------------
-// HELPER: Get MAC Address (Platform-specific)
-// -------------------------
+
 async function getMACAddress(ip) {
     try {
         if (process.platform === "win32") {
@@ -272,16 +256,12 @@ async function getMACAddress(ip) {
     }
 }
 
-// -------------------------
-// ROUTE 1: Serve Main Page
-// -------------------------
+
 app.get("/", (req, res) => {
     res.render("index");
 });
 
-// -------------------------
-// ROUTE 2: Get All Connected Devices (Network Scan)
-// -------------------------
+
 app.get("/devices", async (req, res) => {
     try {
         console.log("Starting network scan...");
@@ -297,9 +277,7 @@ app.get("/devices", async (req, res) => {
     }
 });
 
-// -------------------------
-// ROUTE 3: Ping a Device
-// -------------------------
+
 app.post("/ping", async (req, res) => {
     const { ip } = req.body;
 
@@ -313,9 +291,7 @@ app.post("/ping", async (req, res) => {
     }
 });
 
-// -------------------------
-// START SERVER
-// -------------------------
+
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
     console.log("Network scanner ready - will detect ALL devices on your network");
