@@ -39,7 +39,9 @@ Cloud deployment cannot run ARP or Ping due to security restrictions.
 
 
 ##💻 Installation & Usage
+
 1️⃣ Clone the repository
+
 git clone [[https://github.com/YOUR-USERNAME/YOUR-REPO.git](https://github.com/StheloNgcoborh01/Automated-Local-Network-Scanner.git)]
 cd to the repo
 
