@@ -1,6 +1,4 @@
-// -------------------------------------
-// Load Connected Devices Automatically
-// -------------------------------------
+
 function loadDevices() {
     fetch("/devices")
         .then(res => res.json())
@@ -47,9 +45,7 @@ document.addEventListener("DOMContentLoaded", function() {
 // Auto-refresh every 10 seconds
 setInterval(loadDevices, 10000);
 
-// -------------------------------------
-// Ping a specific device
-// -------------------------------------
+
 function pingDevice(ip) {
     fetch("/ping", {
         method: "POST",
@@ -63,9 +59,7 @@ function pingDevice(ip) {
     .catch(err => alert("Error pinging device"));
 }
 
-// -------------------------------------
-// Manual Ping (using input box)
-// -------------------------------------
+
 function manualPing() {
     const ip = document.querySelector(".input").value;
     const statusElement = document.querySelector(".status");
