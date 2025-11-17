@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Network Scanner</title>
+    <link rel="stylesheet" href="/style.css">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+</head>
+<body>
+   <h1 class ="main-heading"> Automated Network Scanner</h1>
+   <br>
+
+     <div class="card shadow-lg">
+      <div class="card-body">
+
+        <table class="table table-striped" id="historyTable">
+  <thead>
+    <tr>
+      <th>IP Address</th>
+      <th>MAC Address</th>
+      <th>Vendor</th>
+      <th>Host Name</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+
+  <tbody id="deviceBody">
+
+   
+    <!-- rows will come from JavaScript -->
+     
+  </tbody>
+  
+</table>
+
+      </div>
+      </div>
+
+<br>
+<br>
+<div class="pingSection">
+
+      <h2 class= "pingHeading"> Ping A Device? Enter the IP Adress</h2>
+
+      <input class ="input" type="text" placeholder="e.g. 192.168.8.103" > 
+      <button class ="Pingbtn" >Ping</button>
+      <br>
+      <br>
+      <h3 class ="status" > Status :  </h3>
+
+      </div>
+
+
+    
+      <script src="/frontEnd.js"></script>
+
+</body>
+</html>
