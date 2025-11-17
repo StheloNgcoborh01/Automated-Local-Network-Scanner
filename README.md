@@ -35,13 +35,13 @@ ARP can only show devices the OS has recently communicated with — this is a li
 Cloud deployment cannot run ARP or Ping due to security restrictions.
 
 ##📝 Screenshot
-![UI Screenshot](screenshot/screenshot.png)
+![UI Screenshot](screenshot/ui.png)
 
 
 ##💻 Installation & Usage
 1️⃣ Clone the repository
-git clone https://github.com/YOUR-USERNAME/YOUR-REPO.git
-cd YOUR-REPO
+git clone [https://github.com/YOUR-USERNAME/YOUR-REPO.git](https://github.com/StheloNgcoborh01/Automated-Local-Network-Scanner/edit/main/README.md)
+cd to the repo
 
 2️⃣ Install dependencies
 npm install
